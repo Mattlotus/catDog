@@ -31,11 +31,20 @@ app.get('/', (req,res)=>{
     res.send('hola')
 })
 
-app.get('/dogs',(req,res)=>{
+app.get('/cats',(req,res)=>{
     res.render('dogs')
 })
+app.get('/cats/seeds', async (req,res)=>{
+    await cats.deleteMany({})
 
-app.get('/cats',(req,res)=>{
+
+    await cats.create(cats)
+
+})
+app.get('.cats/Show',(req,res))
+
+
+app.get('/dogs',(req,res)=>{
     res.render('cats')
 
 })
